@@ -1,4 +1,4 @@
-import { Notyf } from 'notyf';
+import { Notyf } from '../../../node_modules/notyf';
 import { codes } from './firebaseErrors';
 
 export const centerBox = new Notyf({position:{x:'center',y:'top'},duration:3000})
