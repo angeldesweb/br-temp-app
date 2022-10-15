@@ -30,9 +30,9 @@ export const SignIn = async (args) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth,args.email,args.password);
         const { user } = userCredential;
-        const { username , bio } = await getUserData(user.uid);
-        const { data } = await getFromApi(`${apiUrl}/user/${user.uid}`);
-        const { profile , premium } = data; 
+        const { username , bio , profile , premium } = await getUserData(user.uid);
+        // const { data } = await getFromApi(`${apiUrl}/user/${user.uid}`);
+        // const { profile , premium } = data; 
         localStorage.setItem('session',JSON.stringify({uid:user.uid,profile,premium,username,isAuth:true}))
         session.login({uid:user.uid,isVerified:user.emailVerified,profile,username,bio,isAuth:true});
         return {success:true,message:'Bienvenido de nuevo'};

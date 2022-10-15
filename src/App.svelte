@@ -25,7 +25,7 @@
 </script>
 
 <Router primary={false}>
-    <div>
+    <div data-theme="light">
         <Route path="/">
             <Landing/>
         </Route>

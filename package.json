@@ -19,10 +19,14 @@
     "vite": "^3.1.0"
   },
   "dependencies": {
+    "@felte/validator-yup": "^1.0.10",
     "@stand-io/bienes-components": "^0.0.1",
     "daisyui": "^2.31.0",
     "dayjs": "^1.11.5",
+    "felte": "^1.2.6",
     "firebase": "^9.10.0",
-    "svelte-navigator": "^3.2.2"
+    "notyf": "^3.10.0",
+    "svelte-navigator": "^3.2.2",
+    "yup": "^0.32.11"
   }
 }
