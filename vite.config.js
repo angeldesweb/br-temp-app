@@ -10,5 +10,5 @@ export default defineConfig({
     }
   },
   plugins: [svelte()],
-  optimizeDeps: { exclude: ["svelte-navigator"] }
+  optimizeDeps: { exclude: ["svelte-navigator","notyf"] }
 })
