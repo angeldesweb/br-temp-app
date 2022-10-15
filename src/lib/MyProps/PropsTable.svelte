@@ -1,5 +1,6 @@
 <script>
     export let data;
+    console.log(data)
 </script>
 
 <div class="overflow-x-auto w-full">
@@ -59,6 +60,6 @@
 
 <style>
     table {
-        z-index:-3;
+        z-index:0;
     }
 </style>
