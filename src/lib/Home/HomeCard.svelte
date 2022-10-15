@@ -49,7 +49,6 @@
 
 <style>
     span {
-        width: 12rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -59,7 +58,6 @@
     }
 
     .desc {
-        width: 14rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

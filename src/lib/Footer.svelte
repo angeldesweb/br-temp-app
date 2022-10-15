@@ -13,7 +13,7 @@
         </div>
     </div> 
     <div>
-        <p>2022 - Desarrollado por angeldesweb</p>
+        <p>2022 - Desarrollado por</p>
     </div>
 </footer>
 
