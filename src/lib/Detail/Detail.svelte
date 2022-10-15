@@ -4,13 +4,14 @@
     import { centerBox } from "../../utils/notifications";
     import { useParams } from 'svelte-navigator';
     import { getProp } from '../../utils/http/properties'
-        
+    import TextArea from '../ChatBox/TextArea.svelte';
+    import { user } from '../../store';
     let params = useParams();
 
     const fetchPoperty = async () => {
         try {
             const { data } = await getProp($params.id);
-            return data;
+            return data
         } catch (error) {
             centerBox.error(error);
         }
@@ -53,7 +54,9 @@
         </ul>
     </div>
     <div class="divider"></div>
-
+    {#if $user.uid !== data.createdBy}
+    <TextArea />
+    {/if}
 </div>
 {/await}
 
