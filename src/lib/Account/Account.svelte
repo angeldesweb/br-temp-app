@@ -46,7 +46,7 @@
         <Bio/>
         <div class="tags mt-2">
             {#if !$user.isVerified}
-                <p class="badge badge-outline">Sin verificar</p>
+                <p class="badge badge-outline badge-primary">Sin verificar</p>
                 <a on:click|preventDefault={sendEmail} href={null} class="link link-primary  link-hover">Enviar correo de verificación</a>
                 {:else}
                 <span class="badge badge-success text-white">verificado</span>

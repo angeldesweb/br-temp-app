@@ -14,10 +14,12 @@
 
 <li class="form-group p-1 w-full">
     {#if !value}
-    <label for="" class="text-xs">{label}</label>
+    <label for="" class="text-xs" class:text-primary={!ghost}>{label}</label>
     <select
         bind:value on:change={onChange} {name} 
         class:select-ghost={ghost}
+        class:select-primary={!ghost}
+        class:text-primary={!ghost}
         class:text-white={ghost}
         class="select select-bordered  select-xs w-full max-w-xs"
     >

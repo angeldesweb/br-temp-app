@@ -24,10 +24,10 @@
 <div class="card bg-base-100 shadow-xl">
     <figure class="w-full"><img class="w-full" style="height:12rem" src="{src}" alt="pic"/></figure>
     <div class="card-body">
-        <span class="card-title">{title}</span>
+        <span class="card-title text-primary">{title}</span>
         <div class="card-actions justify-start">
-            <div class="badge badge-primary">{category}</div>
-            <div class="badge badge-primary">{operation}</div>
+            <div class="badge badge-primary text-white">{category}</div>
+            <div class="badge badge-primary text-white">{operation}</div>
         </div>
          
         <p class="desc">
@@ -38,11 +38,10 @@
             <div class="badge badge-outline">Habs: {rooms}</div> 
             <div class="badge badge-outline">Baños: {baths}</div>
             <div class="badge badge-outline">Puestos: {parks}</div>
-            <div class="badge badge-primary badge-outline">Precio: {price}$</div>
-            <!-- <a class="btn btn-primary btn-sm" href="/bien/{doc.id}" use:link>Detalles</a> -->
+            <div class="badge badge-primary text-white badge-outline">Precio: {price}$</div>
         </div>
         <div class="card-actions justify-end">
-        <button id="{id}" on:click={handleClick} class="btn btn-sm btn-primary">Detalle</button>
+        <button id="{id}" on:click={handleClick} class="btn btn-sm text-white btn-primary">Detalle</button>
       </div>
     </div>
 </div>

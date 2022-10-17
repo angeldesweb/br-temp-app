@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="font-bold">{doc.title}</div>
+                            <div class="font-bold text-primary">{doc.title}</div>
                             <div class="text-sm opacity-50">{doc.city}</div>
                         </div>
                     </div>
@@ -41,11 +41,11 @@
                 <td>
                     {doc.category} - {doc.operation}
                     <br>
-                    <span class="badge badge-ghost badge-sm">{doc.price}</span>
+                    <span class="badge badge-primary text-white badge-sm">{doc.price}</span>
                 </td>
                 <td>{doc.createdAt}</td>
                 <th>
-                    <button class="btn btn-ghost btn-xs">editar</button>
+                    <button class="btn btn-ghost text-primary btn-xs">editar</button>
                 </th>
             </tr>
             {/each}

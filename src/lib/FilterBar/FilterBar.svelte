@@ -66,6 +66,7 @@
 
 <ul class=" p-1 flex  flex-col justify-start" >
     <FilterSelect
+        {ghost}
         label='Categoría'
         name='category'
         options={categoryOptions}
@@ -74,6 +75,7 @@
         bind:value={category}
     />
     <FilterSelect
+        {ghost}
         label='Ciudad'
         name='city'
         options={citiesOptions}
@@ -82,6 +84,7 @@
         bind:value={city}
     />
     <FilterSelect
+        {ghost}
         label='Tipo de operación'
         name='operation'
         options={operOptions}
@@ -90,10 +93,11 @@
         bind:value={operation}
     />
     <div class="mt-3">
-        <Range name="min" min={rmin} max={rmax} onChange={handleFilter} {step} label="Rango de precio" />
+        <Range {ghost} name="min" min={rmin} max={rmax} onChange={handleFilter} {step} label="Rango de precio" />
     </div>
     <div class="mt-3">
         <FilterNumber 
+            {ghost}
             label="Cant. Habitaciones"
             placeholder="Habitaciones"
             name="rooms"
@@ -104,6 +108,7 @@
     </div>
     <div class="mt-3">
         <FilterNumber 
+            {ghost}
             label="Cant. Baños"
             placeholder="Baños"
 
@@ -115,6 +120,7 @@
     </div>
     <div class="mt-3">
         <FilterNumber 
+            {ghost}
             label="Ptos. Estacionamiento"
             placeholder="Estacionamiento"
             name="parks"

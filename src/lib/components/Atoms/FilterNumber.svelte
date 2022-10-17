@@ -10,7 +10,7 @@
     const handleReset = () => reset(name);
 </script>
 
-<label for="" class="text-xs">{label}</label>
+<label for="" class="text-xs" class:text-primary={!ghost}>{label}</label>
 {#if value === 0 || value === null}
 <input
     bind:value 
@@ -19,6 +19,7 @@
     {name} 
     {placeholder}
     class="input input-bordered input-xs w-full max-w-xs" 
+    class:input-primary={!ghost}
     class:input-ghost={ghost}
     on:change={onChange}
 />

@@ -13,7 +13,7 @@
 
 <div class="card w-96 bg-base-100 shadow-xl m-auto mt-4 mb-4">
     <div class="card-body">
-        <h2 class="card-title">Inicio de sesión</h2>
+        <h2 class="card-title text-primary">Inicio de sesión</h2>
         <div class="card-actions w-full">
             <SignInForm/>
             <br>

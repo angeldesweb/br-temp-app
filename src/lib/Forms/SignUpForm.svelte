@@ -59,7 +59,9 @@
             primary={true} 
             disabled={!!$warnings.email || !!$warnings.password}
         >
-            Enviar
+            <p class="text-white">Enviar</p>
         </Button>
+        {:else}
+        <progress class="progress" />
     {/if}
 </form>
