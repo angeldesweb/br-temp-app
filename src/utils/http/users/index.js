@@ -17,24 +17,13 @@ export const getUserData = async (uid) => {
     }
 }
 
-const addLevel = async (claims,uid) => {
-    try {
-        const response = await postToApi(`${apiUrl}/user/claims`,JSON.stringify({claims,uid}))
-        return response;
-    } catch (error) {
-        throw error;
-    }
-}
-
 export const SignIn = async (args) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth,args.email,args.password);
         const { user } = userCredential;
         const { username , bio , profile , premium } = await getUserData(user.uid);
-        // const { data } = await getFromApi(`${apiUrl}/user/${user.uid}`);
-        // const { profile , premium } = data; 
-        localStorage.setItem('session',JSON.stringify({uid:user.uid,profile,premium,username,isAuth:true}))
-        session.login({uid:user.uid,isVerified:user.emailVerified,profile,username,bio,isAuth:true});
+        localStorage.setItem('session',JSON.stringify({uid:user.uid,avatar:user.photoURL,profile,premium,username,isAuth:true}))
+        session.login({uid:user.uid,isVerified:user.emailVerified,profile,username,bio,isAuth:true,avatar:user.photoURL});
         return {success:true,message:'Bienvenido de nuevo'};
     } catch (error) {
         throw error;        
@@ -43,16 +32,15 @@ export const SignIn = async (args) => {
 
 export const SignUp = async (args) => {
     try {
-        const { username , email , password , claims } = args;
+        const { username , email , password , claims:{profile,premium} } = args;
         const userCredential = await createUserWithEmailAndPassword(auth,email,password);
         const { user:{uid} } = userCredential;
         const docRef = collection(db,'users');
-        await setDoc(doc(docRef,uid),{username});
-        await addLevel(claims,uid);
+        await setDoc(doc(docRef,uid),{username,profile,premium});
         await sendEmailVerification(userCredential.user);
-        let user = {uid,claims}
-        localStorage.setItem('session',JSON.stringify({uid:user.uid,profile:claims.profile,username,isAuth:true,premium:claims.premium}))
-        session.login({uid:user.uid,profile:claims.profile,username,isAuth:true,isVerified:false})
+        let user = {uid}
+        localStorage.setItem('session',JSON.stringify({uid:uid,username,profile,premium,isAuth:true,}))
+        session.login({uid:user.uid,profile,premium,username,isAuth:true,isVerified:false})
         return {success:true,message:'Registro exitoso'}
     } catch (error) {
         throw error;

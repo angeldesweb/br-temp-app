@@ -7,15 +7,16 @@
     import { onMount } from 'svelte';
     import { sendEmailVerification } from 'firebase/auth';
     import { auth } from '../../firebase';
-  import { centerBox } from '../../utils/notifications';
+    import { centerBox } from '../../utils/notifications';
 
     $: loading = false;
+
     const refresh = async () => {
         try {
             loading = true;
-            const { emailVerified } = auth.currentUser;
+            const cUser = await auth.currentUser;
             const { bio } = await getUserData($user.uid);
-            if(bio) user.add({bio,isVerified:emailVerified});
+            if(bio) user.add({bio,isVerified:cUser?.emailVerified});
             loading = false;
         } catch (error) {
             console.log(error);

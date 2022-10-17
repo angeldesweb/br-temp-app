@@ -34,6 +34,7 @@
             <div class="hidden lg:flex">
                 <svelte:component this={Bars[$account.profile]} mobile={false} />
             </div>
+            {#if $location.pathname === '/home'}
             <div class="lg:hidden">
                 <NavMobileSlot>
                     <div class="dropdown dropdown-end mt-3">
@@ -43,6 +44,7 @@
                     </div>
                 </NavMobileSlot>
             </div>
+            {/if}
         </div>
     </NavBar>
 {/if}
