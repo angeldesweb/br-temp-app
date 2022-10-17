@@ -17,6 +17,7 @@ const filterStore = () => {
     return {
         subscribe,
         add: args => update(store => (store = {...store,...args})),
+        restoreVal: (key) => update(store => (store = {...store,[key]:initial[key]})),
         reset: () => set(initial)
     }
 };

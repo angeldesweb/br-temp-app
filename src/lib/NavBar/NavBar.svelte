@@ -1,10 +1,12 @@
 <script>
     import { user as account } from '../../store';
     import { link , useLocation } from 'svelte-navigator';
-    import { NavBar , NavMobileSlot , NavMenu , NavItem } from '@stand-io/bienes-components';
+    import { NavMobileSlot } from '@stand-io/bienes-components';
+    import { NavBar , NavMenu } from '../components';
     import Default from './Menus/Default.svelte';
     import SellerMenu from './Menus/SellerMenu.svelte';
     import UserMenu from './Menus/UserMenu.svelte';
+    import FilterBar from '../FilterBar/FilterBar.svelte';
 
     const location = useLocation();
     $: isSessionPath = $location.pathname === '/signin' ? 
@@ -28,6 +30,19 @@
             <svelte:component this={Bars[$account.profile]} mobile={true} />
         </NavMobileSlot>
         <a href="/" use:link slot="brand" class="btn btn-ghost normal-case text-xl"><b class="fotn-bold">Bienes</b> Raices</a>
-        <svelte:component this={Bars[$account.profile]} mobile={false} slot="end" />
+        <div slot="end">
+            <div class="hidden lg:flex">
+                <svelte:component this={Bars[$account.profile]} mobile={false} />
+            </div>
+            <div class="lg:hidden">
+                <NavMobileSlot>
+                    <div class="dropdown dropdown-end mt-3">
+                        <NavMenu mobile={true}>
+                            <FilterBar primary={true} />
+                        </NavMenu>
+                    </div>
+                </NavMobileSlot>
+            </div>
+        </div>
     </NavBar>
 {/if}

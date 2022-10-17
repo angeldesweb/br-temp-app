@@ -48,7 +48,9 @@
 </script>
 
 <section class="main grid grid-cols-1 lg:grid-cols-10">
-    <FilterBar/>
+    <div class="lg:flex bg-base-100 col-start-1 col-end-3 hidden">
+        <FilterBar/>
+    </div>
     <div class="content lg:col-start-3 lg:col-end-11">
     {#if loaded}
         {#if $isCleaned && data.length > 0}
