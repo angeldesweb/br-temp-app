@@ -63,11 +63,11 @@
             <WithNav>
                 <Route path=":id" let:params component={Detail} />
             </WithNav>
-            <Route path="*">
+            <Route>
                 <NotFound/>
             </Route>
         </Route>
-        <Route path="*">
+        <Route>
             <NotFound/>
         </Route>
     </div>
